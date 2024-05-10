@@ -1,4 +1,4 @@
-# MCA-Java-Practical-s
+# MCA-Java-Practicals
 
 
 Welcome to the repository it's containing multiple Practicals for the java programming language it is my practice exercises as part of MY MCA (Master of Computer Applications) Learning.
