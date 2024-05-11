@@ -18,12 +18,12 @@ public class TableOfRunnableInterface implements Runnable
 		for(int i=1; i<=10; i++)
 		{
 			System.out.println(i*num);
-			try{
+			/*try{
 				Thread.sleep(1000);
 			}
 			catch(InterruptedException ie){
 				ie.printStackTrace();
-			}
+			}*/
 		}
 	}
 
