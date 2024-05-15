@@ -26,5 +26,8 @@ public class BasicThread extends Thread
 
 		//get state of thread
 		System.out.println("State of thread is: "+ obj.getState());
+
+		//get id of thread
+		System.out.println("Thread " + Thread.currentThread().getId());
 	}
 }

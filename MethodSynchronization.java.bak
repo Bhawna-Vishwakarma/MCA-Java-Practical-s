@@ -1,0 +1,52 @@
+class PrintTable 
+{	
+	synchronized void printTable(int num) //Synchronized Method
+	{ 
+		for(int i=1; i<=10; i++)
+		{
+			System.out.println(num * i);
+		}
+		try{
+			Thread.sleep(400);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+}
+
+class MyThread1 extends Thread
+{	
+	PrintTable t;
+	MyThread1(PrintTable t){
+		this.t = t;
+	}
+	
+	public void run(){
+		t.printTable(5);
+	}
+}
+
+class MyThread2 extends Thread
+{	
+	PrintTable t;
+	MyThread2(PrintTable t){
+		this.t = t;
+	}
+
+	public void run()
+	{
+		t.printTable(10);
+	}
+}
+
+public class MethodSynchronization extends Thread
+{
+	public static void main(String args[])
+	{	
+		PrintTable obj = new PrintTable();
+		MyThread1 th1 = new MyThread1(obj);
+		MyThread2 th2 = new MyThread2(obj);
+		th1.start();
+		th2.start();
+	}
+}

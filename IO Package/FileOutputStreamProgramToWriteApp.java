@@ -1,0 +1,18 @@
+import java.io.*;
+
+public class FileOutputStreamProgramToWriteApp
+{
+	public static void main(String args[])throws Exception
+	{
+		//fileOutputStream means Write file
+		FileOutputStream fout = new FileOutputStream("file.txt",true);
+
+		String str = "\nAdded content to file using fileOutputStream";
+
+		char ch[] = str.toCharArray();
+		for(int i=0; i<=str.length()-1; i++)
+		{
+			fout.write(ch[i]);		
+		}
+	}
+}

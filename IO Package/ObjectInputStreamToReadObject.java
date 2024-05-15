@@ -1,0 +1,24 @@
+import java.io.*;
+public class ObjectInputStreamToReadObject
+{
+	public static void main(String args[])
+	{
+		//Without writeObject it doesn't works
+		try{
+			ObjectInputStream oin = new ObjectInputStream(new FileInputStream("file.txt"));
+			Student stuObj = (Student)oin.readObject();
+			System.out.println("Name   " + stuObj.getName());
+			System.out.println("Rollno " + stuObj.getRollno());
+			System.out.println("Course " + stuObj.getCourse());
+		}
+		catch(ClassNotFoundException cnfe){
+			cnfe.printStackTrace();
+		}
+		catch(FileNotFoundException fnfe){
+			fnfe.printStackTrace();
+		}
+		catch(IOException io){
+			io.printStackTrace();
+		}
+	}
+}

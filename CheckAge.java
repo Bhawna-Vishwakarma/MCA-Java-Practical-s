@@ -1,14 +1,7 @@
 import java.util.Scanner;
 import java.lang.Exception;
 
-public class UnderAgeException extends Exception
-{
-	UnderAgeException(String str){ 
-		super(str); //call the constructor of super class (Exception) with message
-	}
-}
-
-class Myclass
+public class CheckAge
 {
 	public static void main(String args[])
 	{
@@ -24,7 +17,7 @@ class Myclass
 			}
 		}
 		catch(UnderAgeException e){
-			System.out.println(e.getMessage());
+			System.out.println(e); //by Deafult it calls e.toString()
 		}
 	}
-}
+}+

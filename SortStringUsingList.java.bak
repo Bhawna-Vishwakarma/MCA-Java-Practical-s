@@ -1,5 +1,5 @@
 import java.util.*;
-class Sample 
+class SortStringUsingList 
 {
 	public static void main(String[] args) 
 	{
@@ -13,6 +13,6 @@ class Sample
 		ts.add("Ram");
 		ts.add("Shyaam");
 		Collections.sort(ts);
-		System.out.println(1ts);
+		System.out.println(ts);
 	}
 }
