@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.lang.Thread;
 public class BasicThread extends Thread
 {
 	public static void main(String args[])
@@ -18,6 +17,9 @@ public class BasicThread extends Thread
 		obj.setPriority(Thread.MIN_PRIORITY);
 		System.out.println("After setting minimum Priority of thread is: "+ obj.getPriority());
 		obj.setPriority(7);
+		obj.setPriority(Thread.NORM_PRIORITY);
+		System.out.println("After setting normal/Default Priority of thread is: "+ obj.getPriority());
+		
 		System.out.println("After setting custom Priority of thread is: "+ obj.getPriority());
 		
 		//check daemon thread

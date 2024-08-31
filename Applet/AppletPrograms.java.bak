@@ -1,0 +1,35 @@
+import java.applet.Applet;
+//import java.awt.Graphics;
+import java.awt.*;
+r
+public class AppletPrograms extends Applet
+{
+	int x=300, y=100, r=50;
+	public void paint(Graphics g){
+		Font f = new Font("Couier,",Font.BOLD,25);
+		setBackground(Color.green);
+		g.setFont(f);
+		g.setColor(Color.red);
+		g.drawLine(3,300,200,10);
+		g.drawString("Line ",50,400);
+		g.setColor(Color.blue);
+		g.fillOval(x-r,y-r,150,150);
+		g.drawOval(x-r,y-r,150,150);
+		g.drawString("Circle ",300,400);
+		g.setColor(Color.magenta);
+		g.fillRect(480,80,200,100);
+		g.drawRect(480,80,200,100);
+		g.drawString("Rectangle ",550,400);
+	}
+}
+
+/* sir code
+import java.applet.Applet;
+import java.awt.*;
+public class MyApplet extends Applet
+{
+	public void paint(Graphics g){
+	g.drawString("Hello India",100,100);
+	}
+}
+*/

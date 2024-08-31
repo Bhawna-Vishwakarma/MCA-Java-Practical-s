@@ -1,9 +1,8 @@
 import java.util.Scanner;
-import java.lang.Thread;
+//import java.lang.Thread;
 
 public class TableOfRunnableInterface implements Runnable
 {	
-	Scanner scan = new Scanner(System.in);		
 	public static void main(String args[])
 	{	
 		TableOfRunnableInterface obj = new TableOfRunnableInterface();
@@ -14,6 +13,7 @@ public class TableOfRunnableInterface implements Runnable
 	public void run()
 	{
 		System.out.print("Enter number to print table-");
+		Scanner scan = new Scanner(System.in);		
 		int num = scan.nextInt();
 		for(int i=1; i<=10; i++)
 		{
@@ -26,8 +26,5 @@ public class TableOfRunnableInterface implements Runnable
 			}*/
 		}
 	}
-
-	
-
 }
 

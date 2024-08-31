@@ -1,0 +1,17 @@
+import java.awt.*;
+public class FrameCreation 
+{
+	public static void main(String[] args) 
+	{
+		//frame creation 
+		Frame f=new Frame(); 
+		//set visibility 
+		f.setVisible(true); 
+		//set the size of the frame 
+		f.setSize(400,400); 
+		//set the background 
+		f.setBackground(Color.orange); 
+		//set the title of the frame 
+		f.setTitle("mMyframe");	
+	}
+}

@@ -1,0 +1,192 @@
+import java.util.*;
+public class  MySet
+{
+	public static void main(String[] args) 
+	{
+		Set s=new HashSet();
+		s.add(101);
+		s.add(101.999);
+		s.add("AAA");
+		s.add('a');
+		s.add(false);
+		System.out.println(s);
+	}
+}
+
+
+==================
+
+import java.util.*;
+public class  MySet1
+{
+	public static void main(String[] args) 
+	{
+		Set<String> s=new HashSet<String>();
+		s.add("vasu");
+		s.add("amit");
+		s.add("nayan");
+		s.add("nitin");
+		s.add("amit");
+		System.out.println(s);
+	}
+}
+
+
+-------
+
+import java.util.*;
+import com.naresh.example.Student;
+public class  MySet2
+{
+	public static void main(String[] args) 
+	{
+		Student s1=new Student(101,"Archita","MCA");
+		Student s2=new Student(102,"Anjali","MCA");
+		Student s3=new Student(103,"Shrasti","MCA");
+		Student s4=new Student(104,"Archita","MCA");
+		Student s5=new Student(105,"Archita","MCA");
+		Student s6=new Student(105,"Archita","MCA");
+		Set<Student> s=new HashSet<Student>();
+		s.add(s1);
+		s.add(s2);
+		s.add(s3);
+		s.add(s4);
+		s.add(s5);
+		s.add(s6);
+		System.out.println(s);
+	}
+}
+
+
+------
+package com.naresh.example;
+public class Student{
+	int rollno;
+	String name,course;
+public Student(int rollno,String name,String course){
+this.name=name;
+this.course=course;
+this.rollno=rollno;
+}
+public String toString(){
+return "{"+rollno+", "+name+", "+course+"}";
+}
+public int hashCode(){
+return rollno;
+}
+public boolean equals(Object o){
+Student stu=(Student)o;
+if(this.rollno==stu.rollno)
+	return true;
+else
+	return false;
+}
+}
+
+-----------------------------------------
+import java.util.*;
+import com.naresh.example.Student;
+public class  MySet3
+{
+	public static void main(String[] args) 
+	{
+		Student s1=new Student(107,"Archita","MCA");
+		Student s2=new Student(102,"Anjali","MCA");
+		Student s3=new Student(109,"Shrasti","MCA");
+		Student s4=new Student(104,"Archita","MCA");
+		Student s5=new Student(105,"Archita","MCA");
+		Student s6=new Student(100,"Archita","MCA");
+		Set<Student> s=new LinkedHashSet<Student>();
+		s.add(s1);
+		s.add(s2);
+		s.add(s3);
+		s.add(s4);
+		s.add(s5);
+		s.add(s6);
+		System.out.println(s.size());
+		System.out.println(s.isEmpty());
+		System.out.println(s.contains(s4));
+		Iterator<Student> i=s.iterator();
+		while(i.hasNext()){
+		Student st=(Student)i.next();
+		System.out.println(st);
+		}
+		System.out.println("---------------------");
+		for(Student st1:s)
+		System.out.println(st1);
+	}
+}
+
+-------
+
+import java.util.*;
+public class  MySet4
+{
+	public static void main(String[] args) 
+	{
+		Faculty f1=new Faculty(102,"LN rao",24.0);
+		Faculty f2=new Faculty(101,"Praveen",34.0);
+		Faculty f3=new Faculty(105,"Narayana",14.0);
+		Faculty f4=new Faculty(103,"Satish",30.0);
+		Faculty f5=new Faculty(105,"Harikrishna",12.2);
+		TreeSet<Faculty> ts1=new TreeSet<Faculty>();
+		ts1.add(f1);
+		ts1.add(f2);
+		ts1.add(f3);
+		ts1.add(f4);
+		ts1.add(f5);
+		System.out.println(ts1);
+	}
+}
+
+
+---------------------
+public class SortByname implements java.util.Comparator<Faculty>{
+public int compare(Faculty f1,Faculty f2){
+return f1.name.compareTo(f2.name);
+}
+}
+-------------------------
+
+import java.util.*;
+public class  MySet5
+{
+	public static void main(String[] args) 
+	{
+		Faculty f1=new Faculty(102,"LN rao",24.0);
+		Faculty f2=new Faculty(101,"Praveen",34.0);
+		Faculty f3=new Faculty(105,"Narayana",14.0);
+		Faculty f4=new Faculty(103,"Satish",30.0);
+		Faculty f5=new Faculty(105,"Harikrishna",12.2);
+		TreeSet<Faculty> ts1=new TreeSet<Faculty>(new SortByname());
+		ts1.add(f1);
+		ts1.add(f2);
+		ts1.add(f3);
+		ts1.add(f4);
+		ts1.add(f5);
+		System.out.println(ts1);
+	}
+}
+
+
+-------------------
+
+
+public class Faculty implements Comparable<Faculty>{
+	public Faculty(int fid,String name,Double exp){
+	this.fid=fid;
+	this.name=name;
+	this.exp=exp;
+	}
+	int fid;
+	String name;
+	Double exp;
+	public int compareTo(Faculty f){
+	return this.fid-f.fid;
+	}
+    public String toString(){
+	return "{"+fid+", "+name+", "+exp+"}";
+	} 
+}
+--------------------------------
+

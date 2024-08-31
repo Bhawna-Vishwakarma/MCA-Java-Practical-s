@@ -1,0 +1,8 @@
+import java.awt.*;
+class Demo 
+{
+	public static void main(String[] args) 
+	{
+		MyFrame f = new MyFrame();
+	}
+}

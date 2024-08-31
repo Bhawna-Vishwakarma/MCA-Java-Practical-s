@@ -5,7 +5,7 @@ class PrintTable
 			System.out.println(num * i);
 		}
 		try{
-			Thread.sleep(400);
+			Thread.sleep(1000);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -15,15 +15,17 @@ class PrintTable
 class MyThread1 extends Thread
 {	
 	PrintTable t;
-	MyThread1(PrintTable t){
+	int n;
+	MyThread1(PrintTable t, int n){
 		this.t = t;
+		this.n = n;
 	}
 	public void run(){
-		t.printTable(5);
+		t.printTable(n);
 	}
 }
 
-class MyThread2 extends Thread
+/*class MyThread2 extends Thread
 {	
 	PrintTable t;
 	MyThread2(PrintTable t){
@@ -33,13 +35,13 @@ class MyThread2 extends Thread
 		t.printTable(10);
 	}
 }
-
+*/
 public class MethodSynchronization extends Thread
 {
 	public static void main(String args[]){	
 		PrintTable obj = new PrintTable();
-		MyThread1 th1 = new MyThread1(obj);
-		MyThread2 th2 = new MyThread2(obj);
+		MyThread1 th1 = new MyThread1(obj, 5);
+		MyThread1 th2 = new MyThread1(obj, 10);
 		th1.start();
 		th2.start();
 	}

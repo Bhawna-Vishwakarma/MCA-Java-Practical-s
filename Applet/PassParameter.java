@@ -1,0 +1,18 @@
+import java.applet.Applet;
+import java.awt.Graphics;
+import java.awt.*;
+
+public class PassParameter extends Applet 
+{
+	public void paint(Graphics g)
+	{
+		String val1 = getParameter("val1");
+		String val2 = getParameter("val2");
+		Font f = new Font("Couier,",Font.BOLD,25);
+		setBackground(Color.yellow);
+		g.setFont(f);
+		g.setColor(Color.magenta);
+		g.drawString(val1,100,200);
+		g.drawString(val2,200,200);
+	}
+}

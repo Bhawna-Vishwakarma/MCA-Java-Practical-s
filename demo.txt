@@ -1,0 +1,2 @@
+this msg is redirected to the file.
+this error msg is also redirected to the file.

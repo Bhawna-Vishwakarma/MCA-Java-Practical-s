@@ -1,0 +1,7 @@
+class SignUpImpl 
+{
+	public static void main(String[] args) 
+	{
+		Signup obj = new Sigup();
+	}
+}

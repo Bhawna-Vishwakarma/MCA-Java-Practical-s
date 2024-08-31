@@ -1,0 +1,78 @@
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+//import java.io.PrintWriter;
+
+class ChangeDefaultStream 
+{
+	public static void main(String[] args) throws Exception
+	{
+		try
+		{
+			PrintStream prt1 = new PrintStream(new FileOutputStream("output.text"));
+			PrintStream prt2 = new PrintStream(new FileOutputStream("error.text"));
+			System.out.println("Hiii Kshama");
+			try{
+			int a=100/0;
+			}
+			catch(Exception e){
+			e.printStackTrace();
+			}
+            System.setOut(prt1);
+            System.setErr(prt2);
+
+			System.out.println("this msg is redirected to the file.");
+			System.err.println("this error msg is also redirected to the file.");
+			int b=100/0;
+			
+			//out.close();
+		}
+		catch (FileNotFoundException fnfe)
+		{
+			fnfe.printStackTrace();
+		}
+	}
+}
+
+
+/*
+import java.io.*;
+
+public class ChangeDefaultStream {
+    public static void main(String[] args) {
+        try {
+            PrintWriter out = new PrintWriter(new FileOutputStream("demo.txt"));
+            
+            // Redirect System.out to PrintWriter
+            PrintStream stdout = System.out;
+            System.setOut(new PrintStream(new OutputStream() {
+                public void write(int b) throws IOException {
+                    out.write(b);
+                }
+            }));
+            
+            // Redirect System.err to PrintWriter
+            PrintStream stderr = System.err;
+            System.setErr(new PrintStream(new OutputStream() {
+                public void write(int b) throws IOException {
+                    out.write(b);
+                }
+            }));
+
+            // Now all System.out and System.err will be redirected to the file "demo.txt"
+            System.out.println("this msg is redirected to the file.");
+            System.err.println("this error msg is also redirected to the file.");
+
+            // Close PrintWriter (flushes buffered data to the file)
+            out.close();
+            
+            // Optionally, you can restore the original System.out and System.err
+            System.setOut(stdout);
+            System.setErr(stderr);
+            
+        } catch (FileNotFoundException fnfe) {
+            fnfe.printStackTrace();
+        }
+    }
+}
+*/

@@ -1,0 +1,18 @@
+import java.util.*;
+class HashtableDemo
+{
+	public static void main(String[] args) 
+	{
+		Hashtable<Integer, String> ht = new Hashtable<Integer, String>();
+		ht.put(101, "abbas");
+		ht.put(101, "Ram");
+		ht.put(102, "Shyam");
+		ht.put(103, "Sita");
+		System.out.println("---------- Hash table ---------");
+		for(Map.Entry m: ht.entrySet())
+		{
+			System.out.println(m.getKey()+" "+m.getValue());
+		}
+		System.out.println("Reverse Order and no Duplication..!");
+	}
+}

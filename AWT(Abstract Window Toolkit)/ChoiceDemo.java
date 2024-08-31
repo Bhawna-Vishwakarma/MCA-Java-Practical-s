@@ -1,0 +1,25 @@
+import java.awt.*;
+public class ChoiceDemo 
+{
+	public static void main(String[] args) 
+	{
+		Frame f = new Frame();
+		f.setVisible(true);
+		f.setSize(500,500);
+		f.setBackground(Color.orange);
+
+		Choice ch = new Choice();
+		ch.add("java");
+		ch.add("cpp");
+		ch.add("javascript");
+		ch.add(".net");
+		ch.add("html");
+		ch.add("css");
+		ch.add("react");
+		f.add(ch);
+		System.out.println(ch.getItem(1)); 
+		System.out.println(ch.getSelectedItem()); 
+		System.out.println(ch.getSelectedIndex()); 
+		//ch.removeAll();
+	}
+}

@@ -1,0 +1,3 @@
+this error msg is also redirected to the file.
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at ChangeDefaultStream.main(ChangeDefaultStream.java:24)

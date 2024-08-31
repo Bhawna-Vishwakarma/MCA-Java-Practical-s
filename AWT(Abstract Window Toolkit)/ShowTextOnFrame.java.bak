@@ -1,0 +1,28 @@
+import java.awt.*;
+
+public class ShowTextOnFrame extends Frame
+{
+	public static void main(String[] args) 
+	{
+		ShowTextOnFrame obj = new ShowTextOnFrame();
+		obj.setVisible(true);
+		obj.setSize(800,800);
+		obj.setBackground(Color.pink);
+
+		/*To display text on the screen:-
+		1. If you want to display some textual message or some graphical shapes on the Frame then we 
+		have to override paint(), which is present in the Frame class. 
+				 public void paint(Graphics g) 
+		
+		2. To set a particular font to the text,we have to use Font class present in java.awt package 
+				 Font f=new Font(String type,int style,int size); 
+				 Ex: Font f= new Font("arial",Font.BOLD,30)
+		*/
+	}
+	public void paint(Graphics g)
+	{
+		Font f = new Font("arial",Font.ITALIC,25);
+		g.setFont(f);
+		g.drawString("Hellow", 100, 100);
+	}
+}

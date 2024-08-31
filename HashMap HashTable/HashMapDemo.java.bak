@@ -1,0 +1,18 @@
+import java.util.*;
+class HashMapDemo
+{
+	public static void main(String[] args) 
+	{
+		HashMap<Integer, String> ht = new HashMap<Integer, String>();
+		ht.put(101, "abbas");
+		ht.put(101, "Ram");
+		ht.put(102, "Shyam");
+		ht.put(103, "Sita");
+		System.out.println("---------- Hash Map ---------");
+		for(Map.Entry m: ht.entrySet())
+		{
+			System.out.println(m.getKey()+" "+m.getValue());
+		}
+		System.out.println("insertion Order and no Duplication..!");
+	}
+}

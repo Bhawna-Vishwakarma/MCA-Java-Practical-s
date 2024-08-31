@@ -1,0 +1,24 @@
+package com.bhawna.example;
+public class Student{
+	int rollno,fee;
+	String name,course;
+public Student(int rollno,String name,String course,int fee){
+this.name=name;
+this.course=course;
+this.rollno=rollno;
+this.fee=fee;
+}
+public String toString(){
+return "{"+rollno+", "+name+", "+course+""+fee+"}";
+}
+public int hashCode(){
+return rollno;
+}
+public boolean equals(Object o){
+Student stu=(Student)o;
+if(this.rollno==stu.rollno)
+	return true;
+else
+	return false;
+}
+}
